@@ -12,8 +12,7 @@ search.addEventListener("click", (event) => {
 // keranjang
 const keranjangBtn = document.querySelector("#keranjangBtn");
 const keranjangItems = document.querySelector('.keranjang'); 
-const hapusBelanja = document.querySelector("#hapus-btn")
-const belanja = document.querySelector(".keranjang-item")
+const hapusBelanja = document.querySelectorAll("#hapus-btn")
 
 // keranjang items 
 keranjangBtn.addEventListener('click', (event) => {
@@ -22,11 +21,13 @@ keranjangBtn.addEventListener('click', (event) => {
 })
 
 // remove belanja
-hapusBelanja.addEventListener("click", (event) => {
-  if (belanja.contains(event.target)) {
-    belanja.remove()
-  }
-  event.preventDefault()
+hapusBelanja.forEach((tombol) => {
+  tombol.addEventListener("click", () => {
+    const keranjangItem = tombol.closest('.keranjang-item');
+    if (keranjangItem) {
+        keranjangItem.remove();
+    }
+  })
 })
 
 
@@ -43,3 +44,51 @@ document.addEventListener('click', (event) => {
   }
   
 })
+
+const Coba = document.querySelector(".cobas");
+
+function warna() {  
+  Coba.style.background ='blue'
+}
+
+
+// belanja 
+const blj = document.querySelector(".belanja-banyak");
+const bljTambah = document.querySelector(".container-tambah")
+
+blj.addEventListener("click", (event) => {
+  bljTambah.classList.toggle("banyak")
+  blj.remove()
+  event.preventDefault()  
+})
+
+//hialngkan tombol lebih banyak
+
+// tombol beli buat angka
+const beli = document.querySelectorAll("#beli");
+
+beli.forEach((tombol) => {
+  tombol.addEventListener("click", () => {
+    const pesanBrapa = document.querySelector("#pesanan");
+    const text = parseInt(pesanBrapa.textContent);
+    const reslut = text + 1;
+    pesanBrapa.textContent =  reslut;
+  })
+})
+
+beli.forEach((tombol) => {
+  tombol.addEventListener("mousedown", () => {
+    tombol.style.background = 'black'
+  })
+})
+
+beli.forEach((tombol) => {
+  tombol.addEventListener("mouseup", () => {
+    tombol.style.background = '#025E73'
+  })
+})
+
+
+
+
+

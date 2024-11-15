@@ -108,6 +108,14 @@ nav .search-form.active{
   display: block;
 }
 
+#pesanan {
+  color: var(--color);
+}
+
+.krj {
+  display: flex;
+}
+
 .keranjang {
   width: 50%;
   position: absolute;
@@ -140,6 +148,8 @@ nav .search-form.active{
 .keranjang .keranjang-item span {
   cursor: pointer;
 }
+
+
 
 
 
@@ -194,7 +204,7 @@ section .section-title h1 span {
 }
 
 
-.jualan-belanja {
+.jualan-belanja, .belanja-tambah {
   display: flex;
   padding-top: 1rem;
   gap: 1rem;
@@ -251,6 +261,73 @@ section .section-title h1 span {
   background: #128ba7;
 }
 
+.belanja-banyak {
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+.container-tambah {
+  display: none;
+  transition: 1s;
+}
+
+.container-tambah.banyak {
+  display: block;
+}
+
+.kontak {
+   text-align: center;
+   }
+  
+ .kontak .container-kontak{
+     padding: 1rem;
+     display: flex;
+     align-items: center;
+   }
+  
+   .kontak form button {
+     padding: 1rem;
+     border: none;
+     font-size: 1.2rem;
+     border-radius: 1rem;
+   }
+  
+   .kontak form button:hover {
+     background: cornflowerblue;
+  }
+  
+   .kontak form button:active {
+     background: black;
+     color: #fff;
+   }
+
+
+   .kontak .img-kontak {
+    width: 50%;
+  }
+  
+  .kontak .img-kontak img {
+    width: 100%;
+  }
+  
+  .kontak form {
+    gap: 1rem;
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kontak form input, textarea {
+    font-size: 1.2rem;
+    font-family: viga, sans-serif;
+    padding: 1rem;
+  }
+
 footer {
   background-color: var(--backgournd-color);
   padding: 2rem;
@@ -288,3 +365,5 @@ footer .footer-container {
     width: 70%;
   }
 }
+
+
