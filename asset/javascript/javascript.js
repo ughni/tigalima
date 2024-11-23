@@ -92,3 +92,9 @@ beli.forEach((tombol) => {
 
 
 
+let user = { name: 'Alice', age: 30 };
+
+let uniqueID = Symbol('id');
+user[uniqueID] = 12345;
+
+console.log(user[uniqueID]); // Output: 12345
